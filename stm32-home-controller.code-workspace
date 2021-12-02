@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "STM32_Home_Controller",
+			"path": "."
+		},
+		{
+			"name": "etherten_stm32",
+			"path": "..\\..\\STM32 Arduino IDE\\ethernet_reboot\\etherten_stm32"
+		}
+	]
+}
