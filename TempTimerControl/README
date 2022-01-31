@@ -2,3 +2,11 @@
 Temperature  Timer controlle MOSFET power element
 /***********************************************************************************/
 1. Use "BluePill" stm32f103c8t6 (128kb) 
+    https://solovjov.net/reblag.dk/The-Generic-STM32F103-Pinout-Diagram.jpg
+    Also: use I2C 128X64 OLED SH1106 display from AliExpres for visualisation
+    (for sample https://aliexpress.ru/item/32796086867.html?spm=a2g2w.detail.0.0.2cb12e53nP3WxE&_evo_buckets=165609,165598,188872,224373,176818,194275&sku_id=65611415707&gps-id=pcDetailBottomMoreThisSeller&scm=1007.13339.169870.0&scm_id=1007.13339.169870.0&scm-url=1007.13339.169870.0&pvid=9d4cfac5-6681-4428-af09-b3410fec0857&_t=gps-id:pcDetailBottomMoreThisSeller,scm-url:1007.13339.169870.0,pvid:9d4cfac5-6681-4428-af09-b3410fec0857,tpp_buckets:21387%230%23233228%233)
+    as termosensor use thermistor for 3D priner hotend from AliExpres too  
+    (for sample https://aliexpress.ru/item/32812361274.html?spm=a2g2w.productlist.0.0.33c657c1JxtfZ2&sku_id=64624873184)
+
+    RAD use VSCode PIO addon (https://platformio.org/?utm_source=platformio&utm_medium=piohome), framework "Arduino"
+    
