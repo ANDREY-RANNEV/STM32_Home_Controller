@@ -8,5 +8,21 @@ Temperature  Timer controlle MOSFET power element
     as termosensor use thermistor for 3D priner hotend from AliExpres too  
     (for sample https://aliexpress.ru/item/32812361274.html?spm=a2g2w.productlist.0.0.33c657c1JxtfZ2&sku_id=64624873184)
 
-    RAD use VSCode PIO addon (https://platformio.org/?utm_source=platformio&utm_medium=piohome), framework "Arduino"
-    
+    RAD use VSCode PIO (PlatformIO) addon (https://platformio.org/?utm_source=platformio&utm_medium=piohome), framework "Arduino"
+    For schematics use sPlan (https://www.electronic-software-shop.com/splan-80.html?language=de&xoid=d3if5q9oa9ta22iogmmresgca3)
+    For Layout use  Sprint Layout (https://www.electronic-software-shop.com/sprint-layout-60.html?language=de)
+
+    For PlatformIO add in platformio.ini
+
+debug_tool = stlink
+upload_protocol = stlink
+build_flags = 
+	-D PIO_FRAMEWORK_ARDUINO_ENABLE_CDC
+	-D USBCON
+	-D USBD_VID=0x0483
+	-D USBD_PID=0x5740
+	-D USB_MANUFACTURER="RAG Free PRJ"
+	-D USB_PRODUCT="\"BLUEPILL_F103C8\""
+	-D HAL_PCD_MODULE_ENABLED
+monitor_port = COM11
+monitor_speed = 115200
