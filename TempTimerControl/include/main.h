@@ -18,7 +18,7 @@
 extern byte ReciveBuffer[128];
 extern long counter;
 
-extern Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+extern Adafruit_SSD1306 display;
 
 void setup();
 void loop();

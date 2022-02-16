@@ -1,6 +1,5 @@
 #include <main.h>
 
-
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
 byte ReciveBuffer[128];
@@ -12,8 +11,14 @@ void setup()
   // Включаем последовательный порт
   Serial.begin(115200);
   // ждем пока принициализируется USB COM порт
+  counter = 0;
   while (!Serial)
-    ;
+  {
+    delay(100);
+    counter++;
+    if (counter == 50)
+      break;
+  };
 
   // pinMode(signal1, INPUT_PULLDOWN);
   // pinMode(signal2, INPUT_PULLDOWN);
@@ -37,11 +42,12 @@ void setup()
     Serial.println(F("SSD1306 allocation failed"));
     for (;;)
       ; // Don't proceed, loop forever
-
   }
+
+  display.display();
+  delay(2000); // Pause for 2 seconds
+  display.clearDisplay();
   
-    display.display();
-    delay(2000); // Pause for 2 seconds
 }
 
 void loop()
