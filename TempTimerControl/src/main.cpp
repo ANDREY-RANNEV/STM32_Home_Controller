@@ -1,4 +1,8 @@
 #include <main.h>
+
+
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+
 byte ReciveBuffer[128];
 long counter = 0;
 
@@ -11,12 +15,12 @@ void setup()
   while (!Serial)
     ;
 
-  pinMode(signal1, INPUT_PULLDOWN);
-  pinMode(signal2, INPUT_PULLDOWN);
-  // pinMode(signal3, INPUT_PULLDOWN);
+  // pinMode(signal1, INPUT_PULLDOWN);
+  // pinMode(signal2, INPUT_PULLDOWN);
+  // // pinMode(signal3, INPUT_PULLDOWN);
 
-  pinMode(LED_BUILTIN, OUTPUT);                      // PC13
-  attachInterrupt(signal1, func_interrup_1, RISING); // инициализация первого прерывания
+  // pinMode(LED_BUILTIN, OUTPUT);                      // PC13
+  // attachInterrupt(signal1, func_interrup_1, RISING); // инициализация первого прерывания
   // attachInterrupt(signal2, func_interrup_2, FALLING); // инициализация второго прерывания
   // attachInterrupt(signal3, func_interrup_3, CHANGE);  // инициализация третьего прерывания
 
@@ -24,11 +28,25 @@ void setup()
   Serial.println("*  Проект запущен                                                        *");
   Serial.println("*  Версия 0.0.1                                                          *");
   Serial.println("**************************************************************************");
+
+  // Wire.begin();
+  // I2C_Test();
+
+  if (!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS))
+  {
+    Serial.println(F("SSD1306 allocation failed"));
+    for (;;)
+      ; // Don't proceed, loop forever
+
+  }
+  
+    display.display();
+    delay(2000); // Pause for 2 seconds
 }
 
 void loop()
 {
   // put your main code here, to run repeatedly:
   delay(1000);
-  Serial.println(counter);
+  // Serial.println(counter);
 }
