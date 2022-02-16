@@ -1,4 +1,6 @@
 #include <main.h>
+#include <utils.h>
+#include <interrupt.h>
 
 Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
 
@@ -10,7 +12,7 @@ void setup()
   // put your setup code here, to run once:
   // Включаем последовательный порт
   Serial.begin(115200);
-  // ждем пока принициализируется USB COM порт
+  // ждем 5 sec или пока принициализируется USB COM порт
   counter = 0;
   while (!Serial)
   {
@@ -46,8 +48,13 @@ void setup()
 
   display.display();
   delay(2000); // Pause for 2 seconds
+
   display.clearDisplay();
-  
+  display.setTextSize(1);              // Normal 1:1 pixel scale
+  display.setTextColor(SSD1306_WHITE); // Draw white text
+  display.setCursor(0, 0);             // Start at top-left corner
+  display.println(F("Hello, world!"));
+  display.display();
 }
 
 void loop()

@@ -22,7 +22,3 @@ extern Adafruit_SSD1306 display;
 
 void setup();
 void loop();
-void func_interrup_3();
-void func_interrup_2();
-void func_interrup_1();
-void I2C_Test();
