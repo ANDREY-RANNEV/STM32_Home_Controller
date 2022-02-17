@@ -43,6 +43,8 @@ void setup()
   attachInterrupt(PB11, func_interrup_2, CHANGE); // инициализация второго прерывания
   attachInterrupt(PB13, func_interrup_3, CHANGE); // инициализация третьего прерывания
   attachInterrupt(PB11, func_interrup_4, CHANGE); // инициализация второго прерывания
+  attachInterrupt(PB14, button1, RISING);         // инициализация второго прерывания
+  attachInterrupt(PB15, button2, RISING);         // инициализация второго прерывания
 
   Serial.println("**************************************************************************");
   Serial.println("*  Проект запущен                                                        *");
@@ -73,6 +75,8 @@ void setup()
 void loop()
 {
   delay(100);
+  
+  analogWrite(PA8, counter);
 
   display.clearDisplay();
   display.setTextSize(3);              // Normal 1:1 pixel scale

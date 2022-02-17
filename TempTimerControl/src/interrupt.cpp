@@ -44,3 +44,11 @@ void func_interrup_4() // обработчик второго прерывани
     if (!p11 && !p10)
         encoder1_DOWN();
 }
+void button1()
+{
+
+}
+void button2()
+{
+    
+}
