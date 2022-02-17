@@ -41,3 +41,23 @@ void I2C_Test()
         Serial.print(" devices\n");
     }
 }
+
+void encoder2_UP()
+{
+    counter++;
+}
+
+void encoder2_DOWN()
+{
+    counter--;
+}
+
+void encoder1_UP()
+{
+    counter++;
+}
+
+void encoder1_DOWN()
+{
+    counter--;
+}

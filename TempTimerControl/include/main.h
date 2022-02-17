@@ -16,7 +16,7 @@
 #define I2C_SCL PB6
 
 extern byte ReciveBuffer[128];
-extern long counter;
+extern volatile long counter;
 
 extern Adafruit_SSD1306 display;
 
