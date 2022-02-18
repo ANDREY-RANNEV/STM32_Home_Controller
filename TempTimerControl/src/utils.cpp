@@ -44,20 +44,24 @@ void I2C_Test()
 
 void encoder2_UP()
 {
-    counter++;
+    pidSetTemp2+=1;
+    pid2.setpoint(pidSetTemp2);
 }
 
 void encoder2_DOWN()
 {
-    counter--;
+    pidSetTemp2-=1;
+    pid2.setpoint(pidSetTemp2);
 }
 
 void encoder1_UP()
 {
-    counter++;
+    pidSetTemp1+=1;
+    pid1.setpoint(pidSetTemp1);
 }
 
 void encoder1_DOWN()
 {
-    counter--;
+    pidSetTemp1-=1;
+    pid1.setpoint(pidSetTemp1);
 }
